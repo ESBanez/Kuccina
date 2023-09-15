@@ -3,13 +3,14 @@ import Kuccina from "../assets/Kuccina.png";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+      <div className="container-fluid"
+>
         <img
-          className="navbar-brand"
+          className="navbar-brand
           src={Kuccina}
           alt="Kuccina Logo"
-          style={{ width: "10rem", height: "10rem" }}
+          style={{ width: "10rem", height: "10rem"}}
         />
         <button
           className="navbar-toggler"
