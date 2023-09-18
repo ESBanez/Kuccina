@@ -4,13 +4,12 @@ import Kuccina from "../assets/Kuccina.png";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-      <div className="container-fluid"
->
+      <div className="container-fluid">
         <img
-          className="navbar-brand
+          className="navbar-brand"
           src={Kuccina}
-          alt="Kuccina Logo"
-          style={{ width: "10rem", height: "10rem"}}
+          alt="Kuccina-Logo"
+          style={{ width: "10rem", height: "10rem" }}
         />
         <button
           className="navbar-toggler"
@@ -39,6 +38,15 @@ function Navbar() {
             </li>
           </ul>
         </div>
+        <button
+          className="btn btn-dark"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          Favorites
+        </button>
       </div>
     </nav>
   );

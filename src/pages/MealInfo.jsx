@@ -40,15 +40,26 @@ function MealInfo() {
     console.log(meal); // Log the updated state to immediately see the result wihtout delay unlik the ReactDevTools in Components
   };
 
-  useEffect(() => {
-    fetchMeal(); //const fetchMeal is should be under useEffect to avoid multiple
-    // call and have an error
-  }, []);
+  // useEffect(() => {
+  //   fetchMeal(); //const fetchMeal is should be under useEffect to avoid multiple
+  //   // call and have an error
+  // }, []);
+
+  // useEffect(() => {
+  //   document.title = `meal - ${meal.title}`;
+  //   fetchMeal();
+  // }, [meal]); // ["dependency" itong bracket] - each time na mag-babago itong nasa loob
+  // // iiexecute niya yung code na nasa USE EFFECT
+
+  // I interchange the position of 2 useEffect and it fix the favororites to favorites meal information
 
   useEffect(() => {
-    document.title = `meal - ${meal.title}`;
-  }, [meal]); // ["dependency" itong bracket] - each time na mag-babago itong nasa loob
-  // iiexecute niya yung code na nasa USE EFFECT
+    document.title = `Meal - ${meal.title}`;
+  }, [meal.title]);
+
+  useEffect(() => {
+    fetchMeal(); // Fetch the meal details when the component mounts
+  }, [id]); // Fetch again when the 'id' parameter changes
 
   return (
     <>

@@ -3,10 +3,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { mealsSlice } from "./mealsReducer.js";
 import { isLoadingSlice } from "./isLoadingReducer.js";
+import { favoriteMealsSlice } from "./favoriteMealsReducer.js";
 
 const rootreducer = combineReducers({
   meals: mealsSlice.reducer,
   isLoading: isLoadingSlice.reducer,
+  favoriteMeals: favoriteMealsSlice.reducer,
 });
 
 const store = configureStore({

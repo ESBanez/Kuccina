@@ -6,12 +6,16 @@ import Navbar from "./components/Navbar";
 import NotFound from "./pages/NotFound";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
+import FavoriteMealsOffcanvas from "./components/FavoriteMealsOffcanvas";
+import FavoriteListItem from "./components/FavoriteListItem";
 
 function App() {
   return (
     <>
       <Provider store={store}>
         <BrowserRouter>
+          <FavoriteMealsOffcanvas />
+          {/* kahit saan ito ilagay basta nasa loob  */}
           <Navbar />
           <Routes>
             {/* IMPORTANT yung     O R D E R     ng  Route */}
