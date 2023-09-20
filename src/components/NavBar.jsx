@@ -1,12 +1,43 @@
 import { NavLink } from "react-router-dom"; //Dating {L I N K} lang dahil walang active design kapag onclick
 import Kuccina from "../assets/Kuccina.png";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setMeals } from "../store/mealsReducer";
+import { unmarkLoading } from "../store/isLoadingReducer";
+import { markLoading } from "../store/isLoadingReducer";
+import { useEffect } from "react";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const fetchMeals = async () => {
+    const res = await axios(
+      "https://www.themealdb.com/api/json/v1/1/search.php?s="
+    );
+    //global variable Reducer using D I S P A T C H!
+    dispatch(
+      setMeals(
+        res.data.meals.map((meal) => {
+          return {
+            id: meal.idMeal,
+            title: meal.strMeal,
+            thumbnail: meal.strMealThumb,
+          };
+        })
+      )
+    );
+    dispatch(unmarkLoading()); // U N M A R K   L O A D I N G pag-katapos
+  };
+
+  useEffect(() => {
+    dispatch(markLoading()); //L O A D I N G bago ifetch yung meals
+    fetchMeals();
+  }, []);
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
       <div className="container-fluid">
         <img
-          className="navbar-brand"
+          className="navbar-brand mx-5"
           src={Kuccina}
           alt="Kuccina-Logo"
           style={{ width: "10rem", height: "10rem" }}
@@ -39,7 +70,7 @@ function Navbar() {
           </ul>
         </div>
         <button
-          className="btn btn-dark"
+          className="btn btn-dark  mx-4"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight"

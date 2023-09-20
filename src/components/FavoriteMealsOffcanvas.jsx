@@ -24,14 +24,18 @@ function FavoriteMealsOffcanvas() {
         </div>
         <div className="offcanvas-body">
           <ul className="list-group list-group-flush">
-            {favoriteMeals.map((meal) => (
-              <FavoriteListItem
-                key={`favorite-meal-${meal.id}`}
-                id={meal.id}
-                title={meal.title}
-                thumbnail={meal.thumbnail}
-              />
-            ))}
+            {favoriteMeals.length === 0 ? (
+              <li className="list-group-item">No favorite meal yet</li>
+            ) : (
+              favoriteMeals.map((meal) => (
+                <FavoriteListItem
+                  key={`favorite-meal-${meal.id}`}
+                  id={meal.id}
+                  title={meal.title}
+                  thumbnail={meal.thumbnail}
+                />
+              ))
+            )}
           </ul>
         </div>
       </div>

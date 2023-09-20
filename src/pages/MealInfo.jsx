@@ -51,7 +51,7 @@ function MealInfo() {
   // }, [meal]); // ["dependency" itong bracket] - each time na mag-babago itong nasa loob
   // // iiexecute niya yung code na nasa USE EFFECT
 
-  // I interchange the position of 2 useEffect and it fix the favororites to favorites meal information
+  // I interchange the position of 2 useEffect and it fix the navigation from favororites to other favorites
 
   useEffect(() => {
     document.title = `Meal - ${meal.title}`;

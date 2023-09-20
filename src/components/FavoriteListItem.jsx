@@ -1,6 +1,8 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { removeToFavoriteMeals } from "../store/favoriteMealsReducer.js";
 import { Link } from "react-router-dom";
+import "../sass/FavoriteListItem.scss"; // Import your CSS file for styling
 
 function FavoriteListItem(props) {
   const { title, thumbnail, id } = props;
@@ -12,12 +14,13 @@ function FavoriteListItem(props) {
   const handleClose = () => {
     document.getElementById("closeFavoriteOffcanvas").click();
   };
+
   return (
     <>
       <li className="list-group-item d-flex justify-content-between">
         <Link to={`./meal/${id}`} onClick={handleClose}>
           <img src={thumbnail} alt="" width="100" className="me-3" />
-          <span>{title}</span>
+          <span className="shorttitle">{title}</span>
         </Link>
         <button className="btn btn-sm btn-link" onClick={handleRemove}>
           Remove
