@@ -9,6 +9,7 @@ function FilterPanel() {
   const dispatch = useDispatch();
 
   const fetchCategories = async () => {
+    dispatch(markLoading());
     const res = await axios(
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
@@ -19,7 +20,6 @@ function FilterPanel() {
   };
 
   useEffect(() => {
-    dispatch(markLoading());
     fetchCategories();
   }, []);
 

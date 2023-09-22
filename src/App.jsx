@@ -14,9 +14,10 @@ function App() {
     <>
       <Provider store={store}>
         <BrowserRouter>
-          <FavoriteMealsOffcanvas />
           {/* kahit saan ito ilagay basta nasa loob  */}
           <Navbar />
+          <FavoriteMealsOffcanvas />
+
           <Routes>
             {/* IMPORTANT yung     O R D E R     ng  Route */}
             <Route path="/" element={<Home />} />

@@ -53,11 +53,6 @@ function MealCard(props) {
   );
 }
 
-{
-  /* <span className="fa-layers fa-fw fa-lg">
-  <FontAwesomeIcon icon="fa-solid fa-circle" />
-  <FontAwesomeIcon icon="fa-solid fa-check" transform="shrink-6" inverse />
-</span> */
-}
+
 
 export default MealCard;

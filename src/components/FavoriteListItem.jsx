@@ -22,7 +22,7 @@ function FavoriteListItem(props) {
           <img src={thumbnail} alt="" width="100" className="me-3" />
           <span className="shorttitle">{title}</span>
         </Link>
-        <button className="btn btn-sm btn-link" onClick={handleRemove}>
+        <button className="btn btn-outline-sm btn-link" onClick={handleRemove}>
           Remove
         </button>
       </li>
