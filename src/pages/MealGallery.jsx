@@ -29,7 +29,7 @@ function MealGallery() {
 
   return (
     <>
-      <main className="d-flex ps-5">
+      <main className="d-flex ps-5 align-items-start">
         <FilterPanel />
         <div className="d-flex flex-wrap w-75 m-3">
           {isLoading ? (

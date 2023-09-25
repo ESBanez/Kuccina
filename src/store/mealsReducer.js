@@ -5,7 +5,7 @@ export const mealsSlice = createSlice({
   initialState: [],
   reducers: {
     setMeals: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       return action.payload;
     },
     //Everytime ng mag-papasa ng ARGUMENT galing mealGallery.jsx fetchMeals = async binabato rin dito sa reducer

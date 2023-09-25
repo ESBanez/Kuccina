@@ -19,6 +19,7 @@ function Navbar() {
     );
     dispatch(setMeals(res.data.meals));
     dispatch(unmarkLoading());
+    
   };
   useEffect(() => {
     // document.title = "Meal gallery"; //Pagpapalit ng DOC TITLE SA T A A S
@@ -72,6 +73,7 @@ function Navbar() {
         >
           <FontAwesomeIcon icon={faHeart} /> Favorites
         </button>
+
       </div>
     </nav>
   );
