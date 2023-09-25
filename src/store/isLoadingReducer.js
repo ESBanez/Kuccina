@@ -5,12 +5,12 @@ export const isLoadingSlice = createSlice({
   initialState: false,
   reducers: {
     markLoading: () => {
-      console.trace("Mark loading")
+      // console.trace("Mark loading")
       return true;
     },
 
     unmarkLoading: () => {
-      console.trace("Unmark loading")
+      // console.trace("Unmark loading")
       return false;
     },
 

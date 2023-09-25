@@ -1,8 +1,30 @@
 import { NavLink } from "react-router-dom"; //Dating {L I N K} lang dahil walang active design kapag onclick
 import Kuccina from "../assets/Kuccina.png";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setMeals } from "../store/mealsReducer";
+import { unmarkLoading, markLoading } from "../store/isLoadingReducer.js";
+import { useEffect } from "react";
+
 
 
 function Navbar() {
+  const dispatch = useDispatch();
+
+  const fetchMeals = async () => {
+    const res = await axios(
+      "https://www.themealdb.com/api/json/v1/1/search.php?s="
+    );
+    dispatch(setMeals(res.data.meals));
+    dispatch(unmarkLoading());
+  };
+  useEffect(() => {
+    // document.title = "Meal gallery"; //Pagpapalit ng DOC TITLE SA T A A S
+    dispatch(markLoading()); //L O A D I N G bago ifetch yung meals
+    fetchMeals();
+  }, []);
 
   
   return (
@@ -42,13 +64,13 @@ function Navbar() {
           </ul>
         </div>
         <button
-          className="btn btn-dark  mx-4"
+          className="btn btn-outline-dark  mx-4"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight"
         >
-          Favorites
+          <FontAwesomeIcon icon={faHeart} /> Favorites
         </button>
       </div>
     </nav>

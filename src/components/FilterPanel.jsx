@@ -9,7 +9,6 @@ function FilterPanel() {
   const dispatch = useDispatch();
 
   const fetchCategories = async () => {
-    dispatch(markLoading());
     const res = await axios(
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
@@ -25,6 +24,7 @@ function FilterPanel() {
 
   //   P A R A  M A P A G A N A  Y U N G "AWAIT" kailangan ng ASYNC
   const handleRadioChange = async (e) => {
+    dispatch(markLoading());
     const res =
       await axios(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${e.target.id}
     `);

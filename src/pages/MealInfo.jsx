@@ -37,7 +37,6 @@ function MealInfo() {
     mealObj.ingredients = ingredients;
 
     setMeal(mealObj);
-    console.log(meal); // Log the updated state to immediately see the result wihtout delay unlik the ReactDevTools in Components
   };
 
   // useEffect(() => {
@@ -59,7 +58,7 @@ function MealInfo() {
 
   useEffect(() => {
     fetchMeal(); // Fetch the meal details when the component mounts
-  }, [id]); // Fetch again when the 'id' parameter changes
+  }, [meal]); // Fetch again when the 'id' parameter changes
 
   return (
     <>

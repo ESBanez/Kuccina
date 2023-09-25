@@ -15,8 +15,9 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           {/* kahit saan ito ilagay basta nasa loob  */}
-          <Navbar />
           <FavoriteMealsOffcanvas />
+
+          <Navbar />
 
           <Routes>
             {/* IMPORTANT yung     O R D E R     ng  Route */}
