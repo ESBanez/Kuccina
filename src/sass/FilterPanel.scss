@@ -1,0 +1,21 @@
+article{
+    padding: 2rem;
+    width: 20rem;
+    border-radius: 10px;
+
+}
+
+
+@media (max-width: 768px) {
+    article{
+        width: 21.5rem;
+        border-radius: 8px;
+    }
+  
+}
+
+.catergories {
+    font-style: italic;
+   
+}
+

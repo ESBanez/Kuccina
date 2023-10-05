@@ -12,6 +12,9 @@ import { store, persistor } from "./store/store.js";
 import FavoriteMealsOffcanvas from "./components/FavoriteMealsOffcanvas";
 import FavoriteListItem from "./components/FavoriteListItem";
 import {PersistGate} from 'redux-persist/integration/react'
+import CreateMeal from "./components/CreateMeal";
+
+import * as Yup from 'yup';
 
 
 

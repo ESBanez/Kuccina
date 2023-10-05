@@ -1,17 +1,28 @@
 import { NavLink } from "react-router-dom"; //Dating {L I N K} lang dahil walang active design kapag onclick
 import Kuccina from "../assets/Kuccina.png";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setMeals } from "../store/mealsReducer";
 import { unmarkLoading, markLoading } from "../store/isLoadingReducer.js";
 import { useEffect } from "react";
+import CreateMeal from "./CreateMeal";
+import { useState } from 'react'
+import "../sass/CreateMeal.scss"
+import { Link } from "react-router-dom";
+
 
 
 
 function Navbar() {
   const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleCreateMeal = () => {
+    setOpenModal(true);
+  };
 
   const fetchMeals = async () => {
     const res = await axios(
@@ -73,6 +84,16 @@ function Navbar() {
         >
           <FontAwesomeIcon icon={faHeart} /> Favorites
         </button>
+       {/* Modal code */}
+       <Link
+          className="openModalBtn btn btn-outline-dark  mx-4"
+          type="button"
+          onClick={() => setOpenModal(true)}
+                >
+          <FontAwesomeIcon icon={faPlus} /> Create Meal
+        </Link>
+        {openModal && <CreateMeal closeModal={setOpenModal} />}
+
 
       </div>
     </nav>

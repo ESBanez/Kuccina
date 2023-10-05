@@ -1,0 +1,28 @@
+
+@media (max-width: 768px) {
+    main{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        width: auto !important;
+        padding-top: 1rem;
+        border-radius: 30px;
+    }
+    .catergories{
+        width: 1rem;
+    }
+    .listahan{
+        justify-content: center;
+    }
+}
+
+
+main {
+    align-items: flex-start!important;
+    justify-content: center!important;
+}
+
+.listahan{
+    justify-content: center;
+}

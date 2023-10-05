@@ -6,11 +6,19 @@ import { setMeals } from "../store/mealsReducer";
 import FilterPanel from "../components/FilterPanel.jsx";
 import LoadingSpinner from "../components/LoadingSpinner.jsx";
 import { markLoading, unmarkLoading } from "../store/isLoadingReducer.js"; // Import markLoading and unmarkLoading
+import CreateMeal from "../components/CreateMeal";
+import { useState } from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import "../sass/MealGallery.scss"
+
 
 function MealGallery() {
   // const dispatch = useDispatch();
   const meals = useSelector((state) => state.meals); //state na to galing global state Store/mealsReducer.js
   const isLoading = useSelector((state) => state.isLoading);
+  const [openModal, setOpenModal] = useState(false);
+
 
   // const fetchMeals = async () => {
   //   const res = await axios(
@@ -29,9 +37,22 @@ function MealGallery() {
 
   return (
     <>
-      <main className="d-flex ps-5 align-items-start">
-        <FilterPanel />
-        <div className="d-flex flex-wrap w-75 m-3">
+      <main className="d-flex">
+        <div className="catergories">
+          <FilterPanel />
+        </div>
+
+
+        {/* <button
+          className="openModalBtn btn btn-outline-dark  mx-4"
+          type="button"
+          onClick={() => setOpenModal(true)}
+                >
+          <FontAwesomeIcon icon={faHeart} /> Create Meal
+        </button>
+        {openModal && <CreateMeal closeModal={setOpenModal} />} */}
+
+        <div className="d-flex flex-wrap w-75 m-3 listahan">
           {isLoading ? (
             <LoadingSpinner />
           ) : (

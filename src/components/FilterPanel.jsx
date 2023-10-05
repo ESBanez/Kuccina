@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setMeals } from "../store/mealsReducer";
 import { markLoading, unmarkLoading } from "../store/isLoadingReducer.js"; // Import markLoading and unmarkLoading
+import "../sass/FilterPanel.scss";
 
 function FilterPanel() {
   const [categories, setCategories] = useState([]);
@@ -36,8 +37,8 @@ function FilterPanel() {
 
   return (
     <>
-      <div
-        className="border d-flex flex-column w-25 p-3 m-3"
+      <article
+        className="border d-flex flex-column"
         style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" }}
       >
         <h4>Categories</h4>
@@ -57,7 +58,7 @@ function FilterPanel() {
             </li>
           ))}
         </ul>
-      </div>
+      </article>
     </>
   );
 }
