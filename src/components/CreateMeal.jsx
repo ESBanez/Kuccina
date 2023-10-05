@@ -21,7 +21,7 @@ function CreateMeal(closeModal){
     validationSchema: Yup.object({
       title: Yup.string()
         .required("Title field is required.")
-        .min(3, "title must be at least 3 characters long."),
+        .min(3, "Title must be at least 3 characters long."),
       thumbnail: Yup.mixed()
         .required("Please upload an image."),
       instructions: Yup.string()

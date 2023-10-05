@@ -2,6 +2,8 @@ import Navbar from "../components/Navbar.jsx";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; //L I N K ay dapat nasa { } laging mali!
+import "../sass/Home.scss";
+
 
 function Home() {
   const [featuredMeal, setFeaturedMeal] = useState({}); //Parenthesis or OBJECT kung isa lang naman :)
@@ -20,7 +22,7 @@ function Home() {
       title: mealResult.strMeal,
       embedYoutube: (
         <iframe
-          width="560"
+          width="400"
           height="315"
           src={youtubeSrc}
           title="YouTube video player"
@@ -41,7 +43,9 @@ function Home() {
     <>
       <main className="d-flex flex-column align-items-center">
         <h2>Featured meal</h2>
-        {featuredMeal.embedYoutube}
+        <div className="Video">
+          {featuredMeal.embedYoutube}
+        </div>
         <Link to={`/meal/${featuredMeal.id}`}>
           <h4>{featuredMeal.title}</h4>
         </Link>

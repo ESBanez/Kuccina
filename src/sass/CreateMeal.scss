@@ -5,20 +5,18 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3); /* Darken the background */
-    backdrop-filter: blur(5px); /* Apply blur effect */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-
 .modalContainer {
     width: 95%;
     height: 95%;
     border-radius: 12px;
     background-color: white;
-    opacity: 0.99; /* Increase opacity to emphasize the modal */
+    /* Remove opacity setting */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
@@ -26,31 +24,27 @@
     align-items: center;
     z-index: 1200; /* Add a higher value */
     overflow-y: auto; /* Add vertical scrolling if content overflows */
-
-
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .modalContainer .titleCloseBtn {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-
 }
-.titleCloseBtn button{
+
+.titleCloseBtn button {
     cursor: pointer;
     background-color: transparent;
 }
 
 .footer {
-    display: flex; /* Add this line to enable flexbox */
-    justify-content: space-between; /* This property evenly distributes the items */
-    
+    display: flex;
+    justify-content: space-between;
 }
-
 
 /* Styles for smaller screens (phones) */
 @media (max-width: 768px) {
-
     .modalBackground {
         width: 100%;
     }
@@ -58,7 +52,6 @@
     .modalContainer {
         width: 90%; /* Adjust the width as needed for phones */
         height: auto;
-
     }
     
     /* Place the label above the input field */
@@ -76,9 +69,6 @@
     }
     
     .modalContainer .titleCloseBtn {
-        justify-content: end; /* Center the close button on small screens */
-        size: 1rem;
+        justify-content: flex-end; /* Align the close button to the top */
     }
-
-
 }
